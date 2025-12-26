@@ -25,7 +25,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+          # remove backup remote if it already exists
+          git remote remove backup || true
+
+          # add backup remote again
           git remote add backup \
             https://x-access-token:${BACKUP_TOKEN}@github.com/mumerdevops/backup-project.git
 
+          # push code to backup repo
           git push backup main:main --force
