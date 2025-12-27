@@ -1,2 +1,2 @@
-# main-project
-this is my main project
+# Main Project
+## This is my Main Project
